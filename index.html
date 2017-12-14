@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="editor">
+		<div id="business-editor-wrap">
+			<textarea 
+				id="business-code-editor" 
+				onscroll="CRMBusinessProcess.editor.onscroll(this)" 
+				onkeyup="CRMBusinessProcess.editor.onkeypress(this)"></textarea>
+			<pre>
+				<code class="php hljs" id="business-code-view"></code>
+			</pre>
+		</div>
+		<div id="business-code-status"></div>
+	</div>
+
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<style type="text/css">
+		#editor {
+			width: 500px;
+			height: 300px;
+			margin: 50px auto;
+		}
+
+
+	</style>
+</body>
+</html>
