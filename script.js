@@ -21,6 +21,10 @@ CRMBusinessProcess = {}
 
 				this.selectionStart = this.selectionEnd = start + 1;
 			}
+
+			if (keyCode == 13) {
+				//this.onscroll(this);
+			}
 		}).on('paste',function(){
 			setTimeout(function(thisis){
 				CRMBusinessProcess.editor.onkeypress.call(CRMBusinessProcess.editor,thisis)
@@ -40,16 +44,14 @@ CRMBusinessProcess = {}
 				codeView.innerText = source;
 				
 				hljs.highlightBlock(codeView);
-				codeView.insertBefore(
-					this.buildLines(source),
-					codeView.firstChild
-				);
+				this.buildLines(source),
 
 				this.highlightLine();
 			},
 			onscroll: function(self){
 				codeView.scrollTop = self.scrollTop; 
 				codeView.scrollLeft = self.scrollLeft;
+				codeLines.scrollTop = self.scrollTop;
 			},
 			buildLines: function(source){
 				var lines = source.split('\n').length;
@@ -58,12 +60,8 @@ CRMBusinessProcess = {}
 				for(var i = 0;i<lines;i++){
 					num += '<div class="business-code-lines-item" business-code-line="' + (i + 1) + '">' + (i + 1) +'</div>';
 				}
-				
-				var node = document.createElement('div')
-				node.id = 'business-code-lines';
-				node.innerHTML = num;
 
-				return node;
+				codeLines.innerHTML = num;
 			},
 			getCurrentPos: function(){
 				var pos = 0;

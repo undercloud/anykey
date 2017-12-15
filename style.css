@@ -13,43 +13,38 @@
     border: none !important;
     width: 100%;
     margin: 0;
-    padding: 0.5em;
     font-family: monospace;
     font-size: 13px;
     position: absolute;
     background: transparent;
 	color: #aaa;
-    text-shadow: 0px 0px 0px transparent;
+    /*text-shadow: 0px 0px 0px transparent;
     -webkit-text-fill-color: transparent;
-	text-fill-color: transparent;
+	text-fill-color: transparent;*/
 	resize: none;
 }
 
 #business-editor-wrap code,
 #business-editor-wrap textarea {
+    padding: 0;
 	height: 400px;
     box-sizing: border-box;
 	-moz-tab-size: 4;
 	tab-size: 4;
-	padding-top: 0;
-    padding-bottom: 0;
 	white-space: pre;
 }
 
 #business-editor-wrap textarea {
-	padding-left: 52px;
-    padding-bottom: 0.5em;
 	overflow: auto;
     overflow-wrap: normal;
     outline: none;
     box-sizing: border-box;
-    margin-top: 15px;
     z-index: 1;
 }
 
 #business-editor-wrap code {
+    
 	overflow: hidden;
-    padding: 0;
 }
 
 #business-code-lines {
@@ -64,7 +59,10 @@
     text-align: right;
     background: #f8f8f8;
     min-height: 400px;
-    padding-bottom: 0.5em;
+    font-family: monospace;
+    z-index: 1;
+    max-height: 100%;
+    overflow: hidden;
 }
 
 .business-code-lines-item {
