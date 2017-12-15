@@ -5,6 +5,7 @@
 #business-editor-wrap pre {
 	margin: 0;
     background: #e8e8e8;
+    z-index: 0;
 }
 
 #business-editor-wrap textarea {
@@ -36,28 +37,34 @@
 }
 
 #business-editor-wrap textarea {
-	padding-left: 41px;
+	padding-left: 52px;
+    padding-bottom: 0.5em;
 	overflow: auto;
+    overflow-wrap: normal;
     outline: none;
     box-sizing: border-box;
     margin-top: 15px;
+    z-index: 1;
 }
 
 #business-editor-wrap code {
 	overflow: hidden;
+    padding: 0;
 }
 
 #business-code-lines {
 	position: relative;
     float: left;
-	margin-left: -6px;
-	margin-right: 5px;
+	margin-left: 0;
+	margin-right: 7px;
     box-sizing: border-box;
-    border-right: 1px solid #131a27;
-    width: 36px;
+    border-right: 1px solid #dedede;
+    color: #a7a7a7;
+    width: 45px;
     text-align: right;
-    background: #1e2533;
+    background: #f8f8f8;
     min-height: 400px;
+    padding-bottom: 0.5em;
 }
 
 .business-code-lines-item {
@@ -71,8 +78,8 @@
 
 .business-code-lines-item.cursor,
 .business-code-lines-item.cursor:after {
-	background: rgba(255,255,255,0.2);
-    color: #fff;
+    background: rgba(200,200,200,0.2);
+    color: #5a5a5a;
 }
 
 .business-code-lines-item.error:after,
@@ -85,7 +92,7 @@
     position: relative;
     display: block;
     margin-top: -15px;
-    margin-left: 30px;
+    margin-left: 40px;
 }
 
 #business-code-status {

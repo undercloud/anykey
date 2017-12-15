@@ -29,8 +29,10 @@ CRMBusinessProcess = {}
 			CRMBusinessProcess.editor.highlightLine();
 		})
 	
+		var codeEditor = document.getElementById('business-code-editor');
 		var codeView = document.getElementById('business-code-view');
 		var codeLines = document.getElementById('business-code-lines');
+		var codeStatus = document.getElementById('business-code-status');
 
 		CRMBusinessProcess.editor = {
 			onkeypress: function(self){
@@ -38,17 +40,16 @@ CRMBusinessProcess = {}
 				codeView.innerText = source;
 				
 				hljs.highlightBlock(codeView);
-				codeView.prepend(this.buildLines(source));
+				codeView.insertBefore(
+					this.buildLines(source),
+					codeView.firstChild
+				);
 
 				this.highlightLine();
 			},
 			onscroll: function(self){
-				var top = $(self).scrollTop();
-				var left = $(self).scrollLeft();
-
-				$('#business-code-view')
-					.scrollTop(top)
-					.scrollLeft(left)
+				codeView.scrollTop = self.scrollTop; 
+				codeView.scrollLeft = self.scrollLeft;
 			},
 			buildLines: function(source){
 				var lines = source.split('\n').length;
@@ -66,19 +67,18 @@ CRMBusinessProcess = {}
 			},
 			getCurrentPos: function(){
 				var pos = 0;
-				var el = document.getElementById('business-code-editor');
 
-				if (el.selectionStart) {
-					pos = el.selectionStart;
+				if (codeEditor.selectionStart) {
+					pos = codeEditor.selectionStart;
 				} else if (document.selection) {
-					el.focus();
+					codeEditor.focus();
 
 					var r = document.selection.createRange();
 					if (r == null) {
 						pos = 0;
 					}
 
-					var re = el.createTextRange(),
+					var re = codeEditor.createTextRange(),
 						rc = re.duplicate();
 					re.moveToBookmark(r.getBookmark());
 					rc.setEndPoint('EndToStart', re);
@@ -88,7 +88,7 @@ CRMBusinessProcess = {}
 					pos = 0;
 				}
 				
-				var range = el.value.substr(0,pos);
+				var range = codeEditor.value.substr(0,pos);
 				var line = range.split('\n').length;
 				var col = pos - range.lastIndexOf('\n');
 				
@@ -100,10 +100,7 @@ CRMBusinessProcess = {}
 			highlightLine: function(){
 				var pos = this.getCurrentPos();
 				
-				$('#business-code-status')
-					.text(
-						'Line ' + pos.line + ', Column ' + pos.col
-					)
+				codeStatus.innerText = 'Line ' + pos.line + ', Column ' + pos.col;
 				
 				$('#business-code-lines')
 					.find('.business-code-lines-item.cursor')
