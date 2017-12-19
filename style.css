@@ -40,6 +40,7 @@
     padding: 5px 10px;
     text-align: right;
     font-family: monospace;
+    line-height: 14px;
 }
 
 .edito__textarea {
@@ -51,12 +52,11 @@
     right: 0;
     background: transparent;
 	color: #aaa;
-    /*text-shadow: 0px 0px 0px transparent;
-    -webkit-text-fill-color: transparent;*/
+    text-shadow: 0px 0px 0px transparent;
+    -webkit-text-fill-color: transparent;
 	text-fill-color: transparent;
 	resize: none;
     outline: none;
-    padding-bottom: 35px !important;
 }
 
 .edito__textarea {
@@ -66,7 +66,6 @@
 
 .edito__code {
     padding-left: 5px !important;
-    padding-bottom: 50px !important;
 }
 
 .edito__lines {
@@ -80,8 +79,19 @@
     min-height: 400px;
     z-index: 1;
     max-height: 100%;
-    overflow: hidden;
-    padding-bottom: 50px;
+    overflow-y: hidden;
+    overflow-x: scroll; 
+}
+
+.edito__lines-overlay {
+    content: '';
+    background: #f8f8f8;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 44px;
+    height: 17px;
+    z-index: 2;
 }
 
 .edito__lines-item {
@@ -114,3 +124,23 @@
     background: #1e2533;
     border-top: 1px solid #131a27;
 }
+
+.edito--theme-dark .edito__lines-overlay {
+    background-color: #1e2533;
+}
+
+/*
+.edito--theme-dark .edito__code::-webkit-scrollbar-thumb,
+.edito--theme-dark .edito__textarea::-webkit-scrollbar-thumb {
+    background: #12151b;
+    border-radius: 0;
+}
+
+.edito--theme-dark .edito__code::-webkit-scrollbar,
+.edito--theme-dark .edito__textarea::-webkit-scrollbar {
+    background: #1e2533;
+    border-radius: 0;
+    width: 12px;
+    height: 12px;
+}
+*/

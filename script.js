@@ -14,6 +14,7 @@ function Edito(options) {
     options.mount.innerHTML = (
         '<div class="edito' + (options.theme === "dark" ? ' edito--theme-dark' : '') + '">' +
             '<div class="edito__lines"></div>' +
+            '<div class="edito__lines-overlay"></div>' +
             '<div class="edito__wrap">' +
                 '<textarea class="edito__textarea"></textarea>' +
                 '<pre class="edito__pre">' +
@@ -36,14 +37,14 @@ function Edito(options) {
         scroll: function() {
             //var abs = api.diff(this);
             
-            console.log(this.scrollHeight,codeView.scrollHeight)
+            console.log(this.scrollHeight,codeView.scrollHeight,codeLines.scrollHeight)
 
             codeView.scrollTop = this.scrollTop;
             codeView.scrollLeft = this.scrollLeft;
             codeLines.scrollTop = this.scrollTop;
         },
         keyup: function (e) {
-            codeView.innerText = this.value;    
+            codeView.innerText = this.value + '\n';    
             hljs.highlightBlock(codeView);
             api.buildLines();
             api.highlightLine();
