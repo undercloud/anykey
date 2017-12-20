@@ -114,7 +114,6 @@
     color: #ccc;
 }
 
-
 .edito--theme-dark .edito__cursor {
     color: #ddd;
 }
@@ -128,19 +127,3 @@
 .edito--theme-dark .edito__lines-overlay {
     background-color: #1e2533;
 }
-
-/*
-.edito--theme-dark .edito__code::-webkit-scrollbar-thumb,
-.edito--theme-dark .edito__textarea::-webkit-scrollbar-thumb {
-    background: #12151b;
-    border-radius: 0;
-}
-
-.edito--theme-dark .edito__code::-webkit-scrollbar,
-.edito--theme-dark .edito__textarea::-webkit-scrollbar {
-    background: #1e2533;
-    border-radius: 0;
-    width: 12px;
-    height: 12px;
-}
-*/

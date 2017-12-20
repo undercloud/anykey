@@ -35,10 +35,6 @@ function Edito(options) {
             return elem.scrollHeight /  100 * abs; 
         },
         scroll: function() {
-            //var abs = api.diff(this);
-            
-            console.log(this.scrollHeight,codeView.scrollHeight,codeLines.scrollHeight)
-
             codeView.scrollTop = this.scrollTop;
             codeView.scrollLeft = this.scrollLeft;
             codeLines.scrollTop = this.scrollTop;
@@ -79,8 +75,6 @@ function Edito(options) {
             for (var i = 1; i <= lines; i++) {
                 num += '<div class="edito__lines-item" data-code-line="' + i + '">' + i +'</div>';
             }
-
-            //num += '<div class="edito__lines-item">&nbsp;</div>';
 
             codeLines.innerHTML = num;
         },
