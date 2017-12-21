@@ -1,6 +1,6 @@
-"use strict";        
-
 function Edito(options) {
+	"use strict";        
+
     options = options || {};
     options.tabSize = options.tabSize || 4;
     options.syntax = options.syntax || 'nohighlight';
@@ -22,7 +22,9 @@ function Edito(options) {
                 '</pre>' +
             '</div>' +
             '<div class="edito__code-status">' +
+                '<div class="edito__size"></div>' +
                 '<div class="edito__position"></div>' +
+                '<div class="edito__syntax">' + options.syntax + '</div>' +
             '</div>' +
         '</div>'
     );
@@ -44,6 +46,7 @@ function Edito(options) {
             hljs.highlightBlock(codeView);
             api.buildLines();
             api.highlightLine();
+            api.calcSize();
 
             var keyCode = e.keyCode || e.which;
             if (keyCode == 13) {
@@ -126,6 +129,12 @@ function Edito(options) {
             } else {
                 this.highlightLine({line: 1, column: 1});
             }
+        },
+        refresh: function () {
+        	api.keyup.call(codeEditor, {keyCode: -1});
+        },
+        calcSize: function () {
+        	codeSize.innerText = 'Len ' + codeEditor.value.length;
         }
     };
 
@@ -134,6 +143,7 @@ function Edito(options) {
     var codeEditor = options.mount.querySelector('.edito__textarea');
     var codeView = options.mount.querySelector('.edito__code');
     var codeLines = options.mount.querySelector('.edito__lines');
+    var codeSize = options.mount.querySelector('.edito__size');
     var codePosition = options.mount.querySelector('.edito__position');
 
     codeEditor.spellcheck = options.spellcheck;
@@ -156,6 +166,7 @@ function Edito(options) {
     });
 
     api.keyup.call(codeEditor, {keyCode: -1});
+    api.refresh();
 
     Edito.prototype.gotoLine = function (line) {
         api.highlightLine({line: line, column: 1});
@@ -188,10 +199,18 @@ function Edito(options) {
 
     Edito.prototype.setValue = function (value) {
         codeEditor.value = value;
-        api.keyup.call(codeEditor, {keyCode: -1});
+        api.refresh();
     };
 
     Edito.prototype.getValue = function () {
         return codeEditor.value;
+    };
+
+    Edito.prototype.readonly = function (flag) {
+    	if (flag) {
+    		codeEditor.setAttribute("readonly", flag);
+    	} else {
+    		codeEditor.removeAttribute("readonly");
+    	}
     };
 }
