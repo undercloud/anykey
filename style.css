@@ -8,9 +8,29 @@
     box-sizing: border-box;
 }
 
+.edito {
+    height: 100%;
+}
+
+.edito__wrap {
+    height: calc(100% - 25px);
+}
+
+.edito__wrap:after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #f8f8f8;
+    z-index: 1;
+}
+
 .edito__pre {
     margin: 0;
     z-index: 0;
+    height: 100%;
 }
 
 .edito__code,
@@ -19,7 +39,7 @@
     overflow-y: scroll !important;
     overflow-wrap: normal;
     padding: 0 !important;
-    height: 400px;
+    height: 100%;
     -moz-tab-size: 4;
     tab-size: 4;
     white-space: pre;
@@ -35,7 +55,7 @@
 
 .edito__code-status {
     color: #aaa;
-    background: #f2f2f2;
+    background: #f8f8f8;
     font-size: 11px;
     padding: 5px 10px;
     text-align: right;
@@ -69,16 +89,13 @@
 }
 
 .edito__lines {
-    height: 1px;
+    height: calc(100% - 25px);
     float: left;
-    border-right: 1px solid #dedede;
     color: #a7a7a7;
     width: 45px;
     text-align: right;
     background: #f8f8f8;
-    min-height: 400px;
     z-index: 1;
-    max-height: 100%;
     overflow-y: hidden;
     overflow-x: scroll; 
 }
@@ -90,7 +107,7 @@
     bottom: 25px;
     left: 0;
     width: 44px;
-    height: 17px;
+    height: 15px;
     z-index: 2;
 }
 
@@ -99,7 +116,7 @@
 }
 
 .edito__cursor {
-    background: rgba(250,250,250,0.2);
+    background: rgba(200,200,200,0.2);
     color: #5a5a5a;
 }
 
@@ -117,7 +134,6 @@
 
 .edito--theme-dark .edito__lines {
     background: #1e2533;
-    border-right: 1px solid #131a27;
     color: #ccc;
 }
 
@@ -128,9 +144,9 @@
 .edito--theme-dark .edito__code-status {
     color: #aaa;
     background: #1e2533;
-    border-top: 1px solid #131a27;
 }
 
-.edito--theme-dark .edito__lines-overlay {
+.edito--theme-dark .edito__lines-overlay,
+.edito--theme-dark .edito__wrap:after {
     background-color: #1e2533;
 }

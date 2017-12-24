@@ -30,12 +30,6 @@ function Edito(options) {
     );
 
     var api = {
-        diff: function (elem) {
-            return elem.scrollTop / elem.scrollHeight * 100;
-        },
-        abs: function (elem, abs) {
-            return elem.scrollHeight /  100 * abs; 
-        },
         scroll: function() {
             codeView.scrollTop = this.scrollTop;
             codeView.scrollLeft = this.scrollLeft;
@@ -100,10 +94,8 @@ function Edito(options) {
                 rc.setEndPoint('EndToStart', re);
 
                 pos = rc.text.length;
-            }else{
-                pos = 0;
             }
-            
+        
             var range = codeEditor.value.substr(0,pos);
             var line = range.split(end).length;
             var column = pos - range.lastIndexOf(end);
@@ -212,5 +204,9 @@ function Edito(options) {
     	} else {
     		codeEditor.removeAttribute("readonly");
     	}
+    };
+
+    Edito.prototype.getEditor = function () {
+    	return codeEditor;
     };
 }
