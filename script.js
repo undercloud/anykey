@@ -1,4 +1,4 @@
-function Edito(options) {
+function Anykey(options) {
 	"use strict";        
 
     options = options || {};
@@ -12,19 +12,19 @@ function Edito(options) {
     options.tab = options.usingSpaces ? new Array(options.tabSize + 1).join(' ') : "\t";
 
     options.mount.innerHTML = (
-        '<div class="edito' + (options.theme === "dark" ? ' edito--theme-dark' : '') + '">' +
-            '<div class="edito__lines"></div>' +
-            '<div class="edito__lines-overlay"></div>' +
-            '<div class="edito__wrap">' +
-                '<textarea class="edito__textarea"></textarea>' +
-                '<pre class="edito__pre">' +
-                    '<code class="edito__code hljs"></code>' +
+        '<div class="anykey' + (options.theme === "dark" ? ' anykey--theme-dark' : '') + '">' +
+            '<div class="anykey__lines"></div>' +
+            '<div class="anykey__lines-overlay"></div>' +
+            '<div class="anykey__wrap">' +
+                '<textarea class="anykey__textarea"></textarea>' +
+                '<pre class="anykey__pre">' +
+                    '<code class="anykey__code hljs"></code>' +
                 '</pre>' +
             '</div>' +
-            '<div class="edito__code-status">' +
-                '<div class="edito__size"></div>' +
-                '<div class="edito__position"></div>' +
-                '<div class="edito__syntax">' + options.syntax + '</div>' +
+            '<div class="anykey__code-status">' +
+                '<div class="anykey__size"></div>' +
+                '<div class="anykey__position"></div>' +
+                '<div class="anykey__syntax">' + options.syntax + '</div>' +
             '</div>' +
         '</div>'
     );
@@ -70,7 +70,7 @@ function Edito(options) {
 
             var num = '';
             for (var i = 1; i <= lines; i++) {
-                num += '<div class="edito__lines-item" data-code-line="' + i + '">' + i +'</div>';
+                num += '<div class="anykey__lines-item" data-code-line="' + i + '">' + i +'</div>';
             }
 
             codeLines.innerHTML = num;
@@ -110,14 +110,14 @@ function Edito(options) {
             
             codePosition.innerText = 'Line ' + pos.line + ' Column ' + pos.column;
             
-            var cursor = codeLines.querySelector('.edito__cursor');
+            var cursor = codeLines.querySelector('.anykey__cursor');
             if (cursor) {
-                cursor.classList.remove('edito__cursor');
+                cursor.classList.remove('anykey__cursor');
             }
 
-            cursor = codeLines.querySelector('.edito__lines-item[data-code-line="' + pos.line + '"]');
+            cursor = codeLines.querySelector('.anykey__lines-item[data-code-line="' + pos.line + '"]');
             if (cursor) {
-                cursor.classList.add('edito__cursor');
+                cursor.classList.add('anykey__cursor');
             } else {
                 this.highlightLine({line: 1, column: 1});
             }
@@ -132,11 +132,11 @@ function Edito(options) {
 
     var end = "\n";
 
-    var codeEditor = options.mount.querySelector('.edito__textarea');
-    var codeView = options.mount.querySelector('.edito__code');
-    var codeLines = options.mount.querySelector('.edito__lines');
-    var codeSize = options.mount.querySelector('.edito__size');
-    var codePosition = options.mount.querySelector('.edito__position');
+    var codeEditor = options.mount.querySelector('.anykey__textarea');
+    var codeView = options.mount.querySelector('.anykey__code');
+    var codeLines = options.mount.querySelector('.anykey__lines');
+    var codeSize = options.mount.querySelector('.anykey__size');
+    var codePosition = options.mount.querySelector('.anykey__position');
 
     codeEditor.spellcheck = options.spellcheck;
 
@@ -160,16 +160,16 @@ function Edito(options) {
     api.keyup.call(codeEditor, {keyCode: -1});
     api.refresh();
 
-    Edito.prototype.gotoLine = function (line) {
+    Anykey.prototype.gotoLine = function (line) {
         api.highlightLine({line: line, column: 1});
         codeEditor.scrollTop = (line * parseInt(window.getComputedStyle(codeEditor).lineHeight)) - (codeEditor.offsetHeight / 2);
     };
 
-    Edito.prototype.highlightErrorLine = function (line) {
-        var error = codeLines.querySelector('.edito__error-line');
+    Anykey.prototype.highlightErrorLine = function (line) {
+        var error = codeLines.querySelector('.anykey__error-line');
 
         if (error) {
-            error.classList.remove('edito__error-line');
+            error.classList.remove('anykey__error-line');
         }
 
         if (!line) {
@@ -178,27 +178,27 @@ function Edito(options) {
 
         this.gotoLine(line);
 
-        error = codeLines.querySelector('.edito__lines-item[data-code-line="' + line + '"]');
+        error = codeLines.querySelector('.anykey__lines-item[data-code-line="' + line + '"]');
 
         if (error) {
-            error.classList.add('edito__error-line');
+            error.classList.add('anykey__error-line');
         }
     };
 
-    Edito.prototype.clearErrorLine = function () {
+    Anykey.prototype.clearErrorLine = function () {
         this.highlightErrorLine(0);
     };
 
-    Edito.prototype.setValue = function (value) {
+    Anykey.prototype.setValue = function (value) {
         codeEditor.value = value;
         api.refresh();
     };
 
-    Edito.prototype.getValue = function () {
+    Anykey.prototype.getValue = function () {
         return codeEditor.value;
     };
 
-    Edito.prototype.readonly = function (flag) {
+    Anykey.prototype.readonly = function (flag) {
     	if (flag) {
     		codeEditor.setAttribute("readonly", flag);
     	} else {
@@ -206,7 +206,7 @@ function Edito(options) {
     	}
     };
 
-    Edito.prototype.getEditor = function () {
+    Anykey.prototype.getEditor = function () {
     	return codeEditor;
     };
 }
