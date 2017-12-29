@@ -3,6 +3,11 @@
         "use strict";
 
         options = options || {};
+
+        if (typeof options.mount === "string" || options.mount instanceof String) {
+            options.mount = document.querySelector(options.mount);
+        }
+
         options.tabSize = options.tabSize || 4;
         options.syntax = options.syntax || 'nohighlight';
 

@@ -4,111 +4,114 @@
 .anykey__textarea,
 .anykey__code,
 .anykey__lines {
-    position: relative;
-    box-sizing: border-box;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .anykey {
-    height: 100%;
+  height: 100%;
 }
 
 .anykey__wrap {
-    height: calc(100% - 25px);
+  height: calc(100% - 25px);
 }
 
 .anykey__wrap:after {
-    content: '';
-    width: 15px;
-    height: 15px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: #f8f8f8;
-    z-index: 1;
+  content: '';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #f8f8f8;
+  z-index: 1;
 }
 
 .anykey__pre {
-    margin: 0;
-    z-index: 0;
-    height: 100%;
+  margin: 0;
+  z-index: 0;
+  height: 100%;
 }
 
 .anykey__code,
 .anykey__textarea {
-    overflow-x: scroll !important;
-    overflow-y: scroll !important;
-    overflow-wrap: normal;
-    padding: 0 !important;
-    height: 100%;
-    -moz-tab-size: 4;
-    tab-size: 4;
-    white-space: pre;
+  overflow-x: scroll !important;
+  overflow-y: scroll !important;
+  overflow-wrap: normal;
+  padding: 0 !important;
+  height: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  white-space: pre;
 }
 
 .anykey__code,
 .anykey__textarea,
 .anykey__lines {
-    font-family: monospace;
-    font-size: 13px;
-    line-height: 15px;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 15px;
 }
 
 .anykey__code-status {
-    color: #aaa;
-    background: #f8f8f8;
-    font-size: 11px;
-    padding: 5px 10px;
-    text-align: right;
-    font-family: monospace;
-    line-height: 14px;
+  color: #aaa;
+  background: #f8f8f8;
+  font-size: 11px;
+  padding: 5px 10px;
+  text-align: right;
+  font-family: monospace;
+  line-height: 15px;
 }
 
 .anykey__textarea {
-    border: none !important;
-    width: 100%;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: transparent;
-	color: #aaa;
-    text-shadow: 0px 0px 0px transparent;
-    -webkit-text-fill-color: transparent;
-	text-fill-color: transparent;
-	resize: none;
-    outline: none;
+  border: none !important;
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  color: #aaa;
+  text-shadow: 0px 0px 0px transparent;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  resize: none;
+  outline: none;
 }
 
 .anykey__textarea {
-    width: calc(100% - 50px);
-    z-index: 1;
+  width: calc(100% - 50px);
+  min-height: 200px;
+  z-index: 1;
 }
 
 .anykey__code {
-    padding-left: 5px !important;
+  min-height: 200px;
+  padding-left: 5px !important;
 }
 
 .anykey__lines {
-    height: calc(100% - 25px);
-    float: left;
-    color: #a7a7a7;
-    width: 45px;
-    text-align: right;
-    background: #f8f8f8;
-    z-index: 1;
-    overflow-y: hidden;
-    overflow-x: scroll; 
+  height: calc(100% - 25px);
+  min-height: 200px;
+  float: left;
+  color: #a7a7a7;
+  width: 45px;
+  text-align: right;
+  background: #f8f8f8;
+  z-index: 1;
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
 
 .anykey__lines-overlay {
-    content: '';
-    background: #f8f8f8;
-    position: absolute;
-    bottom: 25px;
-    left: 0;
-    width: 44px;
-    height: 15px;
-    z-index: 2;
+  content: '';
+  background: #f8f8f8;
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+  width: 44px;
+  height: 15px;
+  z-index: 2;
 }
 
 .anykey__lines-item {
@@ -116,37 +119,37 @@
 }
 
 .anykey__cursor {
-    background: rgba(200,200,200,0.2);
-    color: #5a5a5a;
+  background: rgba(200,200,200,0.2);
+  color: #5a5a5a;
 }
 
 .anykey__error-line {
-    background: #ffa79e !important;
-    color: #fff;
+  background: #ffa79e !important;
+  color: #fff;
 }
 
 .anykey__size,
 .anykey__position,
 .anykey__syntax {
-    display: inline-block;
-    margin-right: 10px; 
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .anykey--theme-dark .anykey__lines {
-    background: #1e2533;
-    color: #ccc;
+  background: #1e2533;
+  color: #ccc;
 }
 
 .anykey--theme-dark .anykey__cursor {
-    color: #ddd;
+  color: #ddd;
 }
 
 .anykey--theme-dark .anykey__code-status {
-    color: #aaa;
-    background: #1e2533;
+  color: #aaa;
+  background: #1e2533;
 }
 
 .anykey--theme-dark .anykey__lines-overlay,
 .anykey--theme-dark .anykey__wrap:after {
-    background-color: #1e2533;
+  background-color: #1e2533;
 }
