@@ -1,6 +1,8 @@
 # Edito
 Web-based code editor
 
+![Alt text](https://raw.githubusercontent.com/undercloud/edito/promo.png)
+
 ## Installation
 `npm install edito`
 
