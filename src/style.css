@@ -1,22 +1,22 @@
-.anykey,
-.anykey__wrap,
-.anykey__pre,
-.anykey__textarea,
-.anykey__code,
-.anykey__lines {
+.edito,
+.edito__wrap,
+.edito__pre,
+.edito__textarea,
+.edito__code,
+.edito__lines {
   position: relative;
   box-sizing: border-box;
 }
 
-.anykey {
+.edito {
   height: 100%;
 }
 
-.anykey__wrap {
+.edito__wrap {
   height: calc(100% - 25px);
 }
 
-.anykey__wrap:after {
+.edito__wrap:after {
   content: '';
   width: 15px;
   height: 15px;
@@ -27,14 +27,14 @@
   z-index: 1;
 }
 
-.anykey__pre {
+.edito__pre {
   margin: 0;
   z-index: 0;
   height: 100%;
 }
 
-.anykey__code,
-.anykey__textarea {
+.edito__code,
+.edito__textarea {
   overflow-x: scroll !important;
   overflow-y: scroll !important;
   overflow-wrap: normal;
@@ -45,15 +45,15 @@
   white-space: pre;
 }
 
-.anykey__code,
-.anykey__textarea,
-.anykey__lines {
+.edito__code,
+.edito__textarea,
+.edito__lines {
   font-family: monospace;
   font-size: 13px;
   line-height: 15px;
 }
 
-.anykey__code-status {
+.edito__code-status {
   color: #aaa;
   background: #f8f8f8;
   font-size: 11px;
@@ -63,7 +63,7 @@
   line-height: 15px;
 }
 
-.anykey__textarea {
+.edito__textarea {
   border: none !important;
   width: 100%;
   margin: 0;
@@ -79,18 +79,18 @@
   outline: none;
 }
 
-.anykey__textarea {
+.edito__textarea {
   width: calc(100% - 50px);
   min-height: 200px;
   z-index: 1;
 }
 
-.anykey__code {
+.edito__code {
   min-height: 200px;
   padding-left: 5px !important;
 }
 
-.anykey__lines {
+.edito__lines {
   height: calc(100% - 25px);
   min-height: 200px;
   float: left;
@@ -103,7 +103,7 @@
   overflow-x: scroll;
 }
 
-.anykey__lines-overlay {
+.edito__lines-overlay {
   content: '';
   background: #f8f8f8;
   position: absolute;
@@ -114,42 +114,42 @@
   z-index: 2;
 }
 
-.anykey__lines-item {
+.edito__lines-item {
 	padding: 0 5px;
 }
 
-.anykey__cursor {
+.edito__cursor {
   background: rgba(200,200,200,0.2);
   color: #5a5a5a;
 }
 
-.anykey__error-line {
+.edito__error-line {
   background: #ffa79e !important;
   color: #fff;
 }
 
-.anykey__size,
-.anykey__position,
-.anykey__syntax {
+.edito__size,
+.edito__position,
+.edito__syntax {
   display: inline-block;
   margin-right: 10px;
 }
 
-.anykey--theme-dark .anykey__lines {
+.edito--theme-dark .edito__lines {
   background: #1e2533;
   color: #ccc;
 }
 
-.anykey--theme-dark .anykey__cursor {
+.edito--theme-dark .edito__cursor {
   color: #ddd;
 }
 
-.anykey--theme-dark .anykey__code-status {
+.edito--theme-dark .edito__code-status {
   color: #aaa;
   background: #1e2533;
 }
 
-.anykey--theme-dark .anykey__lines-overlay,
-.anykey--theme-dark .anykey__wrap:after {
+.edito--theme-dark .edito__lines-overlay,
+.edito--theme-dark .edito__wrap:after {
   background-color: #1e2533;
 }

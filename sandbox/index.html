@@ -5,37 +5,31 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css" />
 	<link rel="stylesheet" href="../src/style.css?6" />
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/javascript.min.js"></script>
+  <script src="../src/script.js?7"></script>
 </head>
 <body>
 	<div class="container">
-    <div class="container__editor" id="js-editor"></div><!--
- --><div class="container__editor" id="css-editor"></div><!--
- --><div class="container__editor" id="html-editor"></div>
+    <div class="container__editor" id="js-editor"></div>
   </div>
 
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/javascript.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/css.min.js"></script>
-	<script src="../src/script.js?7"></script>
-
 	<style type="text/css">
-		html,
-    body,
-    .container {
-    position: relative;
-    height: calc(100% - 50px);
-  }
+		html, body, .container {
+      position: relative;
+      height: 100%;
+    }
 
-  .container__editor {
-    display: inline-block;
-    vertical-align: top;
-    width: 100%;
-    height: 100%;
-  }
+    .container__editor {
+      display: inline-block;
+      vertical-align: top;
+      width: 100%;
+      height: 100%;
+    }
 	</style>
 
 	<script type="text/javascript">
-    var jse = new Anykey({
+    var jse = new Edito({
     	mount: '#js-editor',
     	syntax: 'js'
     })
@@ -74,17 +68,6 @@ function testPromise() {
     log.insertAdjacentHTML('beforeend', thisPromiseCount +
         ') Promise made (<small>Sync code terminated</small>)<br/>');
 }`)
-
-    var csse = new Anykey({
-      mount: '#css-editor',
-      syntax: 'css'
-    })
-
-    var htmle = new Anykey({
-      mount: '#html-editor',
-      syntax: 'html'
-    })
-
 	</script>
 </body>
 </html>
