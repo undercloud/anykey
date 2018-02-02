@@ -9,7 +9,11 @@
     "url": "https://github.com/undercloud/edito.git"
   },
   "keywords": [
-    "edito"
+    "edito",
+    "highlight",
+    "highlight.js",
+    "code editor",
+    "syntax"
   ],
   "bugs": {
     "url": "https://github.com/undercloud/edito/issues"
