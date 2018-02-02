@@ -1,18 +1,21 @@
 {
-    "name": "edito",
-    "license": "MIT",
-    "version": "1.0.0",
-    "description": "Web code editor",
-    "main": "src/script.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/undercloud/edito.git"
-    },
-    "keywords": [
-        "edito"
-    ],
-    "bugs": {
-        "url": "https://github.com/undercloud/edito/issues"
-    },
-    "homepage": "https://github.com/undercloud/edito"
+  "name": "edito",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "Web code editor",
+  "main": "src/script.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/undercloud/edito.git"
+  },
+  "keywords": [
+    "edito"
+  ],
+  "bugs": {
+    "url": "https://github.com/undercloud/edito/issues"
+  },
+  "homepage": "https://github.com/undercloud/edito",
+  "dependencies": {
+    "highlight.js": ">=9.12.0"
+  }
 }
