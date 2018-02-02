@@ -1,5 +1,5 @@
 # Edito
-Web code editor
+Web-based code editor
 
 ## Installation
 `npm install edito`
@@ -11,7 +11,6 @@ var jse = new Edito({
     syntax: 'js'
 })
 ```
-
 See `sandbox/index.html` for example
 
 ## Options
@@ -23,10 +22,10 @@ See `sandbox/index.html` for example
 * theme - (string) set to 'dark', if need dark theme
 
 ## Methods
-* gotoLine(line)
-* highlightErrorLine(line)
-* clearErrorLine()
-* setValue(value)
-* getValue()
-* readonly(flag)
-* getEditor()
+* gotoLine(line) - move cursor to selected line
+* highlightErrorLine(line) - set error code line
+* clearErrorLine() - unset error highlight
+* setValue(value) - set editor value
+* getValue() - get editor value
+* readonly(flag) - set read only mode
+* getEditor() - get dom editor
