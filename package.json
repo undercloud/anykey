@@ -1,7 +1,7 @@
 {
   "name": "edito",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web code editor",
   "main": "src/script.js",
   "repository": {
