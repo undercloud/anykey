@@ -19,8 +19,8 @@ See `sandbox/index.html` for example
 * mount - (string) dom selector
 * syntax - (string) e.g. 'js'
 * spellcheck - (boolean) default false
-* tabSize - (intger) tab size, default 4
-* usingSpaces - (boolean) useng spaces instead of tabs, default false
+* tabSize - (integer) tab size, default 4
+* usingSpaces - (boolean) using spaces instead of tabs, default false
 * theme - (string) set to 'dark', if need dark theme
 
 ## Methods
